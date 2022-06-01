@@ -12,7 +12,7 @@ class MainviewModel(private val quotesRepository: QuotesRepository):ViewModel() 
             return quotesRepository.getQuotes()
     }
 
-    suspend fun insertQuotes(quote: Quote){
+     fun insertQuotes(quote: Quote){
         viewModelScope.launch(Dispatchers.IO){
             quotesRepository.insertQuotes(quote)
         }
